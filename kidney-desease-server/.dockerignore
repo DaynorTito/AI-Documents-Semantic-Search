@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Data (no copiar al container, se monta como volumen)
+data/chroma_db/*
+data/documents/*
+data/documents_db/*
+data/models/*
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Docs
+README.md
+docs/
+*.md
+
+# Logs
+*.log
+logs/
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore

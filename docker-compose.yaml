@@ -1,0 +1,50 @@
+services:
+  backend:
+    build:
+      context: ./kidney-desease-server
+      dockerfile: Dockerfile
+    container_name: kidney-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - CHROMA_DB_PATH=/app/data/chroma_db
+      - DOCUMENTS_DB_PATH=/app/data/documents_db
+      - MODELS_PATH=/app/data/models
+      - UPLOAD_DIR=/app/data/documents
+    volumes:
+      - ./kidney-desease-server/data:/app/data
+      - ./kidney-desease-server/src:/app/src
+    networks:
+      - kidney-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+
+  frontend:
+    build:
+      context: ./kidney-desease-client
+      dockerfile: Dockerfile
+    container_name: kidney-frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+    networks:
+      - kidney-network
+    restart: unless-stopped
+    environment:
+      - API_URL=http://backend:8000
+
+networks:
+  kidney-network:
+    driver: bridge
+
+volumes:
+  backend-data:
+    driver: local

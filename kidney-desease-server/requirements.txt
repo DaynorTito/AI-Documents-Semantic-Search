@@ -1,0 +1,40 @@
+# Core
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+python-multipart==0.0.6
+pydantic==2.5.3
+pydantic-settings==2.1.0
+
+# ML & Embeddings
+sentence-transformers==2.3.1
+scikit-learn==1.4.0
+numpy==1.26.3
+pandas==2.2.0
+torch==2.1.2
+
+# Vector DB
+chromadb==0.4.22
+
+# Document Processing
+PyPDF2==3.0.1
+python-docx==1.1.0
+
+# Visualization
+matplotlib==3.8.2
+seaborn==0.13.1
+plotly==5.18.0
+
+# Utilities
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-dotenv==1.0.0
+
+# Code Quality
+black==24.1.1
+mypy==1.8.0
+flake8==7.0.0
+pytest==7.4.4
+httpx==0.26.0
+# pip install numpy scikit-learn pandas torch --only-binary :all:
+
+# pip install fastapi uvicorn[standard] python-multipart pydantic pydantic-settings sentence-transformers chromadb PyPDF2 python-docx matplotlib seaborn plotly python-jose[cryptography] passlib[bcrypt] python-dotenv black mypy flake8 pytest httpx
