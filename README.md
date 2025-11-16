@@ -13,8 +13,6 @@ An intelligent document management and semantic search platform designed specifi
 - [Installation & Setup](#installation--setup)
 - [Usage Guide](#usage-guide)
 - [API Documentation](#api-documentation)
-- [Project Structure](#project-structure)
-- [License](#license)
 
 ---
 
